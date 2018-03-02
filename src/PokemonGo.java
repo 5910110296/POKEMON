@@ -22,6 +22,7 @@ public class PokemonGo {
 		this.weight = weight;
 		this.stepLength = stepLength;
                 this.putonweight = putonweight;
+                putonweight = 2;
                 step = 0;
 
 		if(types == null)
@@ -45,7 +46,6 @@ public class PokemonGo {
         public void walk(){
 		step += 1;
 	}
-
 	public void eat(){
 		weight += putonweight;
 	}
