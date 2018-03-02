@@ -21,9 +21,6 @@ public class PokemonFarm {
 		pokemons.add(pokemongo);
 	}
 
-	public void feed(){
-	}
-
 	public void list(){
 		for(PokemonGo pokemongo: pokemons){
 			pokemongo.print();
