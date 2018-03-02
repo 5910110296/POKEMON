@@ -16,12 +16,16 @@ public class PokemonBall {
     private Scanner commandScanner;
     private float opportunity;
   
-    
-    
     public PokemonBall(){
+        commandScanner = new Scanner(System.in);
+    }
+    public void run(){
         String command;
         System.out.print("\nWhich ball do you want? Type: ");
         command = commandScanner.next();
+        setOpportunity(command);
+    }
+    public void setOpportunity(String command){
         if(command.equals("PokeBall")){
             this.opportunity = (float) 0.8;    
         }
@@ -32,8 +36,10 @@ public class PokemonBall {
             this.opportunity = (float) 1.0;
         }
     }
+    
     public float getOpportunity(){
         return this.opportunity;
     }
+    
 }
 
