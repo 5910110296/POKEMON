@@ -8,6 +8,8 @@
  *
  * @author Asus-PC
  */
-public class PokemonEvolution {
-    
+public class PokemonEvolution extends Aggy{
+    public PokemonEvolution(String name, float weight, float stepLength){
+		super(name,weight,stepLength);
+	}
 }
