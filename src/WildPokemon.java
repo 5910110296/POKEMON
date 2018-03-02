@@ -12,7 +12,6 @@ import java.util.Scanner;
  * @author Asus-PC
  */
 public class WildPokemon {
-        String command;
         private Scanner commandScanner;
 	private boolean isRunning;
         private int num;
@@ -21,9 +20,13 @@ public class WildPokemon {
         private PokemonBall pokemonBall;
         private CommandParser commandParser;
         
+        public WildPokemon(){
+            commandScanner = new Scanner(System.in);
+        }
+        
         public void run(){
 		isRunning = true;
-                this.pokemonBall = pokemonBall;
+                //this.pokemonBall = pokemonBall;
 		String command;
                 System.out.println("Hello Welcome to WildPokemon");
                     while(isRunning){
@@ -40,7 +43,7 @@ public class WildPokemon {
                         else if(command.equals("pick")){
                                 pickPokemon();
                         }
-            }
+                }
         }
         public void randomPokemon(){
             num = 3%(int)(Math.random()*10);
@@ -60,6 +63,7 @@ public class WildPokemon {
         }
         
         public void catchPokemon(float opportunity){
+            pokemonBall.run();
             this.randomPokemon();
             if(mood*opportunity > 0.5){
                 bag += 1;
