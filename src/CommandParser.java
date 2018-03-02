@@ -42,6 +42,8 @@ public class CommandParser {
 				this.listNewPokemons();
 			else if(command.equals("feed"))
 				this.feedPokemons();
+                        else if(command.equals("exercise"))
+				this.exercisePokemons();
                         else if(command.equals("gotowild"))
                                 this.goToWild();
                 }
@@ -76,7 +78,13 @@ public class CommandParser {
 			this.pokemonFarm.feed("all");
 		}
 	}
-        
+        private void exercisePokemons(){
+                System.out.print("Which pokemon do you want to feed? ");
+		String name = this.commandScanner.next();
+		if(name.equals("all")){
+			this.pokemonFarm.exercise("all");
+                }
+        }
         private void goToWild(){
                this.wildPokemon.run();
         } 
