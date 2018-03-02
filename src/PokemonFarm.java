@@ -34,4 +34,11 @@ public class PokemonFarm {
 			}
 		}
 	}
+        public void exercise(String pokemonName){
+		if(pokemonName.equals("all")){
+			for(PokemonGo pokemon: pokemons){
+				pokemon.walk();
+			}
+		}
+	}
 }
