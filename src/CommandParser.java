@@ -12,16 +12,17 @@ import java.util.Scanner;
  * @author Asus-PC
  */
 public class CommandParser {
-    private final PokemonFarm pokemonFarm;
+        private final PokemonFarm pokemonFarm;
+        private WildPokemon wildPokemon;
 	private Scanner commandScanner;
 	private boolean isRunning;
 
-	public CommandParser(PokemonFarm pokemonFarm){
+	public CommandParser(PokemonFarm pokemonFarm, WildPokemon wildPokemon){
 		this.pokemonFarm = pokemonFarm;
-		commandScanner = new Scanner(System.in);
+                this.wildPokemon = wildPokemon;
+                commandScanner = new Scanner(System.in);
 		isRunning = false;
 	}
-
 	public void run(){
 		isRunning = true;
 		String command;
@@ -41,15 +42,15 @@ public class CommandParser {
 				this.listNewPokemons();
 			else if(command.equals("feed"))
 				this.feedPokemons();
-		}
-
-	}
-
-	private void addNewPokemon(){
+                        else if(command.equals("gotowild"))
+                                this.goToWild();
+                }
+        }
+	void addNewPokemon(){
 		commandScanner.nextLine();
 		// input name weight length
 		String pokemonType = "Aggy";
-		String name = "name";
+		String name = "aggy";
 		float weight = 10f;
 		float stepLength = 5f;
 
@@ -75,4 +76,10 @@ public class CommandParser {
 			this.pokemonFarm.feed("all");
 		}
 	}
-}
+        
+        private void goToWild(){
+               this.wildPokemon.run();
+        } 
+    }
+
+
