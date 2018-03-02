@@ -18,8 +18,8 @@ public class Pokemon {
     public static void main(String[] args) {
         // TODO code application logic here
         PokemonFarm pokemonFarm = new PokemonFarm();
-		CommandParser commandParser = new CommandParser(pokemonFarm);
-
+        WildPokemon wildPokemon = new WildPokemon();
+		CommandParser commandParser = new CommandParser(pokemonFarm, wildPokemon);
 		commandParser.run();
     }
 }
